@@ -2,18 +2,18 @@
 Ce projet fournit une approche clé en main pour générer une vCard (fichier .vcf) à partir des données présentes dans le DOM, tout en incluant l’image de profil au format Base64. Il s’agit d’un processus entièrement automatisé, pertinent lorsqu’on souhaite distribuer des cartes de contacts numériques contenant photo, coordonnées, réseaux sociaux, etc.
 
 ## Fonctionnalités principales
-### Encodage d’image en Base64 :
+- **Encodage d’image en Base64 :
 L’image identifiée par #profile-pic est convertie directement dans le navigateur, aucune dépendance externe nécessaire.
 
-### Extraction des informations depuis le DOM :
+- **Extraction des informations depuis le DOM :
 Le script parcourt la page pour récupérer nom, prénom, titre, entreprise, téléphone, courriel, adresse, liens vers réseaux sociaux, etc.
 Chaque information optionnelle est ajoutée si elle est trouvée; sinon, le champ est ignoré.
 
-### Construction dynamique de la vCard :
+- **Construction dynamique de la vCard :
 Un modèle de vCard VERSION:3.0 est utilisé comme base, puis complété à la volée avec les données.
 Le résultat final est une vCard complète contenant toutes les infos nécessaires.
 
-## Téléchargement automatique :
+- **Téléchargement automatique :
 Une fois construite, la vCard est encodée en Base64 et un lien de téléchargement est généré et cliqué automatiquement, permettant de récupérer le fichier contact.vcf sans interaction supplémentaire.
 
 ## Pré-requis techniques
@@ -107,14 +107,14 @@ Champs manquants :
 S’assurer que l’ID existe dans la page et que l’élément contient du texte.
 Ex: <div id="phone">+1 (514) 555-1234</div>
 
-### Nom du fichier :
+- **Nom du fichier :
 Par défaut, link.download = 'contact.vcf';. Changer cette ligne si besoin.
 
-### Format d’image et qualité :
+- **Format d’image et qualité :
 Le script utilise canvas.toDataURL('image/jpeg', 0.5) par défaut. Ajuster la valeur (entre 0 et 1) pour une meilleure qualité ou un poids réduit.
 Pour du PNG, utiliser canvas.toDataURL('image/png').
 
-### Informations supplémentaires :
+- **Informations supplémentaires :
 Vous pouvez ajouter d’autres champs à la vCard en suivant le même modèle (remplacer END:VCARD par LABEL:NouvelleInfo\nEND:VCARD, par exemple), à condition de respecter la spécification vCard.
 
 ## Conclusion
