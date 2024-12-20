@@ -1,7 +1,7 @@
 
 	
 				function encodeImg(){
-					const image = document.getElementById('profile-pic');
+					const image = document.querySelector('#profile-pic img');
 					
 					return new Promise((resolve, reject) => {
 					const getBase64StringFromDataURL = (dataURL) =>
